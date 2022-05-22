@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//    const product = {
+//        brand :"Nike",
+//        logo :"url",
+//        seller: "Flipcart"
+//    } 
+
+//    let p1 = Object.create(product)
+//    console.log(p1)
+
+//    function product(type){
+//        this.type = type;
+//        this.logo ="url"
+//        this.seller = "Flipcart"
+       
+//    }
+
+//    product.prototype.discount = function(){
+//        console.log("50% discount")
+//    }
+
+//    let p1 = new product("shoe");
+//    let p2 = new product("sneaker");
+
+//    p1.discount();
+//    console.log(p1)
+//    console.log(p2)
+
+
+// function product(type){
+//        this.type = type;
+//        this.logo ="url"
+//        this.seller = "Flipcart"
+       
+//    }
+
+//    product.prototype.changeType = function(type){
+//     this.type = type;
+//    }
+
+//    product.prototype.price = 1000   
+//    let p1 = new product("shoe");
+//    let p2 = new product("sneaker");
+   
+//    p1.changeType("t-shirt");
+//    console.log(p1)
+//    console.log(p2)
+
+// let arr = [1,2,3];
+
+// let arr2 = new Array(1,2,3);
+// console.log(arr2)
+
+function myArray(){
+// argument
+Object.defineProperty(this, "length" , {
+    value:0,
+    writable: true,
+    enumerable:false,
+});
+
+this.length = arguments.length;
+
+for(var i=0; i<arguments.length; i++){
+    this[i]=arguments[i];
+}
+}
+
+
+let arr3 = new myArray(1,2,3,4,5)
+
+console.log(Object.values(arr3));
+
+myArray.prototype.errorw = function(value){
+    this[this.length] = value;
+    this.length++;
+}
+
+myArray.prototype.pop = function(){
+   delete this[this.length-1];
+    this.length--;
+}
+// myArray.prototype.pr = function(){
+//     console.log(Object.values(this));
+// }
+//  arr3.errorw(6)
+arr3.pop();
+arr3.pop(7);
+arr3.pop(8);
+// arr3.pr()
+ console.log(Object.values(arr3));
+
+
+</script>

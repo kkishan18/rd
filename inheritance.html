@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function myArray(){
+// argument
+Object.defineProperty(this, "length" , {
+    value:0,
+    writable: true,
+    enumerable:false,
+});
+
+this.length = arguments.length;
+
+for(var i=0; i<arguments.length; i++){
+    this[i]=arguments[i];
+}
+}
+
+
+let arr3 = new myArray(1,2,3,4,5)
+
+// console.log(Object.values(arr3));
+
+// myArray.prototype.push = function(value){
+//     this[this.length] = value;
+//     this.length++;
+// }
+
+// myArray.prototype.pop = function(){
+//    delete this[this.length-1];
+//     this.length--;
+// }
+// myArray.prototype.print = function(){
+//    let a = []
+//     a.push(Object.values(this))
+//     console.log(a)
+// }
+
+myArray.prototype.top = function(value){
+    delete this[this.length-1];
+//     this.length--;
+}
+
+//  arr3.push(6)
+// arr3.pop(5);
+// arr3.pop(4);
+arr3.top();
+
+
+// console.log(Object.values(this));
+//  console.log(Object.values(arr3));
+
+//  console.log(Object.values(arr3));
+</script>
+

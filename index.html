@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Class Notes</title>
+</head>
+<body>
+    <form onsubmit="submitProduct(event)" id="Products">
+        <input type="text" id="name" placeholder="Nmae">
+        <input type="text" id="brand" placeholder="Brand">
+        <select id="gender">
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <input type="number" id="price" placeholder="Price">
+        <input type="submit">
+        <!-- <link rel="stylesheet" href="main.js"> -->
+    </form>
+</body>
+</html>
+<script>
+{
+    let obj = {} // 
+    
+    function Product(name , brand , price){
+        this.name = name;
+        this.brand = brand;
+        this.gender = gender;
+        this.price = price;
+    }
+    //  let arr = [];
+      
+        //    let arr = [];
+    function submitProduct(e){
+        e.preventDefault();
+        let form =document.getElementById("Products")
+        let name = form.name.value;
+        let brand = form.brand.value;
+        let gender = form.gender.value;
+        let price = form.price.value;
+ 
+         let p = new Product(name, brand,gender, price)
+        //  arr.push(p)
+         console.log(p)
+    }
+      }
+
+//     let bedroom ={
+//     name : "bedroom",
+//     purpose : "sleep",
+// };
+
+// let livingRoom ={
+//     name : "Living Room",
+//     purpose : "Rest"
+// };
+
+// let storeRoom ={
+//     name : "Store Room",
+//     purpose : "Store",
+// };
+
+// function food(food) {
+//     console.log (`Service ${food} in ${this.name}`);  //string Literal
+    // console.log("Service" + food + "in" + this.name);
+
+
+// food.call(bedroom, "Pizza");
+// food.call(livingRoom, "Pizza");
+// food.call(storeRoom, "Pizza");
+
+// let arr = ["Pizza"]
+// food.apply(bedroom, arr);
+// food.apply(livingRoom, ["Pizza"]);
+// food.apply(storeRoom, ["Pizza"]);
+
+// let f1 = food.bind(bedroom, "Pizza")
+// let f2 =food.bind(livingRoom, "Pizza");
+// let f3=food.bind(storeRoom, "Pizza");
+
+// f1();
+// f2();
+// f3();
+</script>

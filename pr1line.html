@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     function myArray(){
+// argument
+Object.defineProperty(this, "length" , {
+    value:0,
+    writable: true,
+    enumerable:false,
+});
+
+this.length = arguments.length;
+
+for(var i=0; i<arguments.length; i++){
+    this[i]=arguments[i];
+}
+}
+
+
+let arr3 = new myArray(1,2,3,4,5)
+
+
+myArray.prototype.print = function(){
+   let a = []
+    a.push(Object.values(this))
+    console.log(a)
+}
+
+
+arr3.print();
+
+</script>
